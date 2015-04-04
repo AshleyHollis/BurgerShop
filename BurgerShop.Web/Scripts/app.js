@@ -1,5 +1,9 @@
 ﻿'use strict';
 
+// Configure Toastr
+    toastr.options.timeOut = 4000;
+    toastr.options.positionClass = 'toast-bottom-right';
+
 // Declares how the application should be bootstrapped. See: http://docs.angularjs.org/guide/module
 angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directives', 'app.controllers'])
 

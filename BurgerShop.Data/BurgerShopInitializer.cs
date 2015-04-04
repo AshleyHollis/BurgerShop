@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BurgerShop.Data.Models;
 
 namespace BurgerShop.Data
 {

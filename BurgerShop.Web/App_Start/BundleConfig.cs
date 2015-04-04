@@ -20,6 +20,10 @@ namespace App.BurgerShop.Web
 
             bundles.Add(new ScriptBundle("~/js/app").Include(
                 "~/scripts/vendor/angular-ui-router.js",
+                "~/scripts/vendor/toastr.min.js",
+                "~/scripts/common/common.js",
+                "~/scripts/common/logger.js",
+                "~/scripts/common/spinner.js",
                 "~/scripts/filters.js",
                 "~/scripts/services.js",
                 "~/scripts/directives.js",

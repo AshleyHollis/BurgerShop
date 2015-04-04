@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using BurgerShop.Data;
+using BurgerShop.Data.Models;
 
 namespace App.BurgerShop.Web.Api
 {
