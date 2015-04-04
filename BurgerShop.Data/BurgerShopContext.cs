@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BurgerShop.Data
 {
-    internal class BurgerShopContext : DbContext
+    public class BurgerShopContext : DbContext
     {
         public BurgerShopContext() : base("BurgerShopContext")
         {}

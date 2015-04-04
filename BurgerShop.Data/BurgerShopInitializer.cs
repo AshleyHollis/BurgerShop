@@ -12,7 +12,7 @@ namespace BurgerShop.Data
         {
             var products = new List<Product>
             {
-                new Product {ID = 1, Name = "Product01", ProductCode = "P001"}
+                new Product {ID = 1, Name = "Product01", ProductCode = "P001", Description = "First Product"}
 
             };
 
