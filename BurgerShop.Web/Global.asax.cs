@@ -4,7 +4,9 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Data.Entity;
 using System.Web.Http;
+using BurgerShop.Data;
 
 namespace App.BurgerShop.Web
 {
@@ -19,6 +21,11 @@ namespace App.BurgerShop.Web
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //Set up the Database
+            BurgerShopContext burgerShopContext = new BurgerShopContext();
+            Database.SetInitializer(new BurgerShopInitializer());
+            burgerShopContext.Database.Initialize(true);
+
         }
     }
 }
