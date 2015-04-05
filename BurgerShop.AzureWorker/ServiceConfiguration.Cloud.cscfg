@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="BurgerShop.AzureWorker" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2014-06.2.4">
+  <Role name="BurgerShop.Azure.WorkerRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="{YOUR-CONNECTION-STRING}" />
+      <Setting name="mongoDb" value="mongodb://{YOUR-REPLICA-SET-NODES}/?connect=replicaset" />
+      <Setting name="logToMongo" value="false" />
+      <Setting name="PrimaryQueueClientType" value="BurgerShop.Azure.QueueClient,BurgerShop.Azure" />
+      <Setting name="SecondaryQueueClientType" value="BurgerShop.Aws.QueueClient,BurgerShop.Aws" />
+      <Setting name="PrimaryTopicClientType" value="BurgerShop.Azure.TopicClient,BurgerShop.Azure" />
+      <Setting name="SecondaryTopicClientType" value="BurgerShop.Aws.TopicClient,BurgerShop.Aws" />
+      <Setting name="AWSAccessKey" value="{YOUR-ACCESS-KEY}" />
+      <Setting name="AWSSecretKey" value="{YOUR-SECRET-KEY}" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

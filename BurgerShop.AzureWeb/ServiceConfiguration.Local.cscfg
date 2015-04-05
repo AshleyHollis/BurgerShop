@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="BurgerShop.AzureWeb" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2014-06.2.4">
+  <Role name="BurgerShop.Web">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="logToMongo" value="false" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://sc-psod-reactive.servicebus.windows.net/;SharedAccessKeyName=Subscriber;SharedAccessKey=evo5yWKigUnGkArrKvvpACwSLYbaiq0E0dLeRss5JPg=" />
+      <Setting name="PrimaryQueueClientType" value="BurgerShop.Azure.QueueClient,BurgerShop.Azure" />
+      <Setting name="SecondaryQueueClientType" value="BurgerShop.Aws.QueueClient,BurgerShop.Aws" />
+      <Setting name="PrimaryTopicClientType" value="BurgerShop.Azure.TopicClient,BurgerShop.Azure" />
+      <Setting name="SecondaryTopicClientType" value="BurgerShop.Aws.TopicClient,BurgerShop.Aws" />
+      <Setting name="AWSAccessKey" value="AKIAIUON35ES44HI4JCQ" />
+      <Setting name="AWSSecretKey" value="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" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

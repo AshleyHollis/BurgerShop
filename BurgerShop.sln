@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.22512.0
+VisualStudioVersion = 14.0.22609.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.Tests", "BurgerShop.Tests\BurgerShop.Tests.csproj", "{8B7281D4-9942-4E3D-B9E5-28BADE9C80DF}"
 EndProject
@@ -12,6 +12,22 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.Infrastructure", "BurgerShop.Infrastructure\BurgerShop.Infrastructure.csproj", "{255065D7-6B92-4342-A824-B90F3787312E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.Web", "BurgerShop.Web\BurgerShop.Web.csproj", "{CA4C10C8-7C31-4AD2-8F17-DFBDCA8DA8C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.Aws", "BurgerShop.Aws\BurgerShop.Aws.csproj", "{23F9EEF0-F212-4576-A8B8-12B3C8EC8980}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.Azure", "BurgerShop.Azure\BurgerShop.Azure.csproj", "{CCA70D52-3BDB-44A4-B50F-02CF37FB2FED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.Azure.WorkerRole", "BurgerShop.Azure.WorkerRoler\BurgerShop.Azure.WorkerRole.csproj", "{420604EB-37B5-4965-BA94-953C6784D716}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.MessageHandlers", "BurgerShop.MessageHandlers\BurgerShop.MessageHandlers.csproj", "{AF6E33AF-5BA0-4535-855C-8A1CDA492C77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.Messages", "BurgerShop.Messages\BurgerShop.Messages.csproj", "{7F0962D9-8D5B-4590-8663-10E0705FBF04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.Messaging", "BurgerShop.Messaging\BurgerShop.Messaging.csproj", "{B4B3BB4B-5A2D-432E-962A-C0778ED24844}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "BurgerShop.AzureWeb", "BurgerShop.AzureWeb\BurgerShop.AzureWeb.ccproj", "{76EB1616-1E87-4CEB-B216-895AFA671B92}"
+EndProject
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "BurgerShop.AzureWorker", "BurgerShop.AzureWorker\BurgerShop.AzureWorker.ccproj", "{EF7AFAC9-D798-4AA0-8D57-2150B6551F68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +55,38 @@ Global
 		{CA4C10C8-7C31-4AD2-8F17-DFBDCA8DA8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA4C10C8-7C31-4AD2-8F17-DFBDCA8DA8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA4C10C8-7C31-4AD2-8F17-DFBDCA8DA8C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23F9EEF0-F212-4576-A8B8-12B3C8EC8980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23F9EEF0-F212-4576-A8B8-12B3C8EC8980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23F9EEF0-F212-4576-A8B8-12B3C8EC8980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23F9EEF0-F212-4576-A8B8-12B3C8EC8980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA70D52-3BDB-44A4-B50F-02CF37FB2FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA70D52-3BDB-44A4-B50F-02CF37FB2FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA70D52-3BDB-44A4-B50F-02CF37FB2FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA70D52-3BDB-44A4-B50F-02CF37FB2FED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{420604EB-37B5-4965-BA94-953C6784D716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{420604EB-37B5-4965-BA94-953C6784D716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{420604EB-37B5-4965-BA94-953C6784D716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{420604EB-37B5-4965-BA94-953C6784D716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF6E33AF-5BA0-4535-855C-8A1CDA492C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF6E33AF-5BA0-4535-855C-8A1CDA492C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF6E33AF-5BA0-4535-855C-8A1CDA492C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF6E33AF-5BA0-4535-855C-8A1CDA492C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0962D9-8D5B-4590-8663-10E0705FBF04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0962D9-8D5B-4590-8663-10E0705FBF04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0962D9-8D5B-4590-8663-10E0705FBF04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0962D9-8D5B-4590-8663-10E0705FBF04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B3BB4B-5A2D-432E-962A-C0778ED24844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B3BB4B-5A2D-432E-962A-C0778ED24844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B3BB4B-5A2D-432E-962A-C0778ED24844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B3BB4B-5A2D-432E-962A-C0778ED24844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76EB1616-1E87-4CEB-B216-895AFA671B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76EB1616-1E87-4CEB-B216-895AFA671B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76EB1616-1E87-4CEB-B216-895AFA671B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76EB1616-1E87-4CEB-B216-895AFA671B92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF7AFAC9-D798-4AA0-8D57-2150B6551F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF7AFAC9-D798-4AA0-8D57-2150B6551F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF7AFAC9-D798-4AA0-8D57-2150B6551F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF7AFAC9-D798-4AA0-8D57-2150B6551F68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
