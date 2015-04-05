@@ -14,7 +14,7 @@ angular.module('app.controllers', [])
         toastr.success('Home page loaded!');
     }])
 
-    .controller('storeController', function ($scope, $routeParams, DataService) {
+    .controller('storeController', ['$scope', '$routeParams', 'DataService', function ($scope, $routeParams, DataService) {
 
     // get store and cart from service
     $scope.productDetails = DataService.productDetails;
@@ -25,9 +25,9 @@ angular.module('app.controllers', [])
         $scope.product = $scope.store.getProduct($routeParams.productCode);
         $scope.detail = $scope.productDetails.getDetail($routeParams.productCode);
     }
-    })
+    }])
 
-    .controller('AdminController_Music', function ($scope, $filter) {
+    .controller('AdminController_Music', ['$scope', '$filter', function ($scope, $filter) {
 
         var myStore = new store();
         $scope.currentPage = 0;
@@ -80,8 +80,6 @@ angular.module('app.controllers', [])
         // functions have been describe process the data for display
         $scope.myFilter();
         $scope.search();
-
-
 
 
 function store() {
@@ -144,7 +142,7 @@ productDetails.prototype.getDetail_sound = function(code) {
         }
         return null;
     }
-    })
+    }])
     // Path: /about
     .controller('AboutCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
         $scope.$root.title = 'BurgerShop | About';
