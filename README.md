@@ -5,7 +5,7 @@ BurgerShop is a cloud-enabled, mobile-ready, AngularJS powered HTML5 Shopping Ca
   - Add some products
   - Buy some products
   - Magic
-  - 
+
 ### Version
 1.0.0
 
