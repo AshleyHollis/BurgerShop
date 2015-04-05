@@ -25,7 +25,7 @@ namespace App.BurgerShop.Web.Api
 
         public ProductsController(IProductService productService)
         {
-            if (productService == null) throw new ArgumentNullException(nameof(productService));
+            if (productService == null) throw new ArgumentNullException("productService");
             _productService = productService;
         }
 
