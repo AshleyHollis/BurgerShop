@@ -14,7 +14,8 @@ namespace App.BurgerShop.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/content/css/app").Include("~/content/app.css"));
+            bundles.Add(new StyleBundle("~/content/css/app").Include("~/content/app.css",
+                "~/content/main.css"));
 
             bundles.Add(new ScriptBundle("~/js/jquery").Include("~/scripts/vendor/jquery-{version}.js"));
 
@@ -28,7 +29,8 @@ namespace App.BurgerShop.Web
                 "~/scripts/services.js",
                 "~/scripts/directives.js",
                 "~/scripts/controllers.js",
-                "~/scripts/app.js"));
+                "~/scripts/app.js",
+                "~/scripts/common/cart.js"));
         }
     }
 }

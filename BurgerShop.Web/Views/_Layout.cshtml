@@ -6,6 +6,27 @@
     <title ng-bind="title">@(PageData["title"] ?? "BurgerShop")</title>
     <meta name="description" content="@PageData["description"]">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,700,600,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,800,700,900' rel='stylesheet' type='text/css'>
+
+    <!-- Our Website CSS Styles -->
+    <link href="~/content/css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="~/content/css/slide/component.css" rel="stylesheet" type="text/css" />
+    <!-- Mini Slider -->
+    <!-- Carouse Testimonial-->
+    <link href="~/content/css/owl_carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="~/content/css/owl_carousel/owl.theme.css" rel="stylesheet" type="text/css" />
+    <!-- End Carouse Testimonial-->
+    <link href="~/content/css/minislide/flexslider.css" rel="stylesheet" type="text/css" />
+
+    <!-- End Mini Slider -->
+    <link href="~/content/css/gallery.css" rel="stylesheet" type="text/css" />
+    <link href="~/content/css/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/content/css/component_black.css" rel="stylesheet" type="text/css" />
+    <link href="~/content/css/responsive.css" rel="stylesheet" type="text/css" />
+
     @Styles.Render("~/content/css/app")
 </head>
 <body>
@@ -13,34 +34,60 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <header class="navbar navbar-inverse" role="banner" ng-if=" !layout ">@* The 'layout' property is set inside the app.run(..) method on '$stateChangeSuccess' *@
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".spa-navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                @*<a class="navbar-brand" href="#/"><img src="images/logo3.jpg" alt="logo" /></a>*@
                 <a href="./" class="navbar-brand">BurgerShop</a>
             </div>
-            <nav class="collapse navbar-collapse spa-navbar-collapse" role="navigation">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="./about">About</a>
-                    </li>
-                    <li>
-                        <a href="./contacts">Contacts</a>
-                    </li>
-                </ul>
+            <div class="content-count-cart-header dropdown" ng-controller="HomeCtrl">
+                <a href="" title="go to shopping cart" class="dropdown-toggle" data-toggle="dropdown" ng-disabled="cart.getTotalCount() < 1">
+                    <i class="fa fa-shopping-cart"></i>
+                    <p class="number-prod-cart">{{cart.getTotalCount()}}</p>
+                </a>
+                <div class="dropdown-menu vertical-li dropdown-prod-cart">
+                    <ul>
+                        <li ng-repeat="item in cart.items | orderBy:'name'">
+                            <div class="col-md-12 minitotal-prod">
+                                <div class="col-md-6 minicart-img" ng-show='item.src != null'>
+                                    @*<img src="~/images/store/{{i}}" alt="{{item.name}}" />*@
+                                </div>
+
+                                <div class="col-md-6 minicart-data">
+                                    <p class="mc-name">{{item.name}}</p>
+                                    <p>{{item.quantity}} X {{item.price | currency}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="separator"></div>
+                    <div id="cartInfo"><p class="minucart-price">Subtotal {{cart.getTotalPrice() | currency}}</p></div>
+                    <a href="#/cart" id="goToCheckOut">Proceed to purchase</a>
+                </div>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse dropdown-prod-cart-scroll scroll-menu">
+
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/">Home</a></li>
+
                     <li>
-                        <a href="./login">Sign In</a>
+                        <a href="/about">About</a>
                     </li>
                 </ul>
-            </nav>
+
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-    </header>
+        <!-- /.container -->
+    </nav>
+
 
     <div id="ui-view" class="container" ui-view data-tmpl-url="@Request.RequestContext.RouteData.DataTokens["templateUrl"]">
         @RenderBody()
