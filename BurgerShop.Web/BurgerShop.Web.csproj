@@ -554,6 +554,10 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BurgerShop.Core\BurgerShop.Core.csproj">
+      <Project>{46922e55-ac8c-4789-94d7-343bda939db2}</Project>
+      <Name>BurgerShop.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BurgerShop.Data\BurgerShop.Data.csproj">
       <Project>{e8cbffde-a019-423f-b78c-2c745a3dc190}</Project>
       <Name>BurgerShop.Data</Name>

@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.4.0.0-ci1036\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -47,27 +50,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BurgerShopContext.cs" />
-    <Compile Include="EntityService.cs" />
-    <Compile Include="GenericRepository.cs" />
-    <Compile Include="IEntityService.cs" />
-    <Compile Include="IGenericRepository.cs" />
-    <Compile Include="IProductRepository.cs" />
-    <Compile Include="IProductService.cs" />
-    <Compile Include="IRepository.cs" />
-    <Compile Include="IService.cs" />
-    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\IEntity.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\IGenericRepository.cs" />
+    <Compile Include="Repositories\IProductRepository.cs" />
+    <Compile Include="Services\IProductService.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="Migrations\201504050217030_InitialCreate.cs" />
     <Compile Include="Migrations\201504050217030_InitialCreate.Designer.cs">
       <DependentUpon>201504050217030_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Entity.cs" />
-    <Compile Include="Models\IEntity.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="ProductRepository.cs" />
-    <Compile Include="ProductService.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Services\ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="Services\EntityService.cs" />
+    <Compile Include="Services\IEntityService.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -77,6 +80,12 @@
     <EmbeddedResource Include="Migrations\201504050217030_InitialCreate.resx">
       <DependentUpon>201504050217030_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BurgerShop.Core\BurgerShop.Core.csproj">
+      <Project>{46922e55-ac8c-4789-94d7-343bda939db2}</Project>
+      <Name>BurgerShop.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

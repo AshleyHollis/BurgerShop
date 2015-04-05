@@ -9,8 +9,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using BurgerShop.Core.Models;
 using BurgerShop.Data;
-using BurgerShop.Data.Models;
 
 namespace App.BurgerShop.Web.Api
 {
@@ -30,13 +30,13 @@ namespace App.BurgerShop.Web.Api
         }
 
         // GET: api/Products
-        public IEnumerable<Product> GetProducts()
+        public IEnumerable<ProductDTO> GetProducts()
         {
             return _productService.GetAll();
         }
 
         // GET: api/Products/5
-        [ResponseType(typeof(Product))]
+        [ResponseType(typeof(ProductDTO))]
         public IHttpActionResult GetProduct(int id)
         {
             var product = _productService.GetById(id);

@@ -1,8 +1,9 @@
-﻿using BurgerShop.Data.Models;
+﻿using BurgerShop.Core.Models;
+using BurgerShop.Data.Models;
 
 namespace BurgerShop.Data
 {
-    public class ProductService : EntityService<Product>, IProductService
+    public class ProductService : EntityService<Product, ProductDTO>, IProductService
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IProductRepository _productRepository;
@@ -19,7 +20,7 @@ namespace BurgerShop.Data
             _productRepository = productRepository;
         }
 
-        public Product GetById(int Id)
+        public ProductDTO GetById(int Id)
         {
             return _productRepository.GetById(Id);
         }
