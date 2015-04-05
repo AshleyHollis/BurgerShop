@@ -16,19 +16,30 @@ namespace App.BurgerShop.Web.Api
 {
     public class ProductsController : ApiController
     {
-        private BurgerShopContext db = new BurgerShopContext();
+        private readonly IProductService _productService;
+
+        public ProductsController()
+        {
+            _productService = new ProductService();
+        }
+
+        public ProductsController(IProductService productService)
+        {
+            if (productService == null) throw new ArgumentNullException(nameof(productService));
+            _productService = productService;
+        }
 
         // GET: api/Products
-        public IQueryable<Product> GetProducts()
+        public IEnumerable<Product> GetProducts()
         {
-            return db.Products;
+            return _productService.GetAll();
         }
 
         // GET: api/Products/5
         [ResponseType(typeof(Product))]
-        public async Task<IHttpActionResult> GetProduct(int id)
+        public IHttpActionResult GetProduct(int id)
         {
-            Product product = await db.Products.FindAsync(id);
+            var product = _productService.GetById(id);
             if (product == null)
             {
                 return NotFound();
@@ -37,84 +48,84 @@ namespace App.BurgerShop.Web.Api
             return Ok(product);
         }
 
-        // PUT: api/Products/5
-        [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutProduct(int id, Product product)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// PUT: api/Products/5
+        //[ResponseType(typeof(void))]
+        //public async Task<IHttpActionResult> PutProduct(int id, Product product)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            if (id != product.ID)
-            {
-                return BadRequest();
-            }
+        //    if (id != product.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            db.Entry(product).State = EntityState.Modified;
+        //    db.Entry(product).State = EntityState.Modified;
 
-            try
-            {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProductExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await db.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!ProductExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return StatusCode(HttpStatusCode.NoContent);
-        }
+        //    return StatusCode(HttpStatusCode.NoContent);
+        //}
 
-        // POST: api/Products
-        [ResponseType(typeof(Product))]
-        public async Task<IHttpActionResult> PostProduct(Product product)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+        //// POST: api/Products
+        //[ResponseType(typeof(Product))]
+        //public async Task<IHttpActionResult> PostProduct(Product product)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
 
-            db.Products.Add(product);
-            await db.SaveChangesAsync();
+        //    db.Products.Add(product);
+        //    await db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = product.ID }, product);
-        }
+        //    return CreatedAtRoute("DefaultApi", new { id = product.Id }, product);
+        //}
 
-        // DELETE: api/Products/5
-        [ResponseType(typeof(Product))]
-        public async Task<IHttpActionResult> DeleteProduct(int id)
-        {
-            Product product = await db.Products.FindAsync(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Products/5
+        //[ResponseType(typeof(Product))]
+        //public async Task<IHttpActionResult> DeleteProduct(int id)
+        //{
+        //    Product product = await db.Products.FindAsync(id);
+        //    if (product == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            db.Products.Remove(product);
-            await db.SaveChangesAsync();
+        //    db.Products.Remove(product);
+        //    await db.SaveChangesAsync();
 
-            return Ok(product);
-        }
+        //    return Ok(product);
+        //}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
 
-        private bool ProductExists(int id)
-        {
-            return db.Products.Count(e => e.ID == id) > 0;
-        }
+        //private bool ProductExists(int id)
+        //{
+        //    return db.Products.Count(e => e.Id == id) > 0;
+        //}
     }
 }

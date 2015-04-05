@@ -17,10 +17,10 @@ namespace BurgerShop.Data.Migrations
 
         protected override void Seed(BurgerShopContext context)
         {
-            context.Products.AddOrUpdate(p => p.ID,
-                new Product {ID = 1, Name = "Product01", ProductCode = "P001", Description = "First Product"},
-                new Product {ID = 2, Name = "Product02", ProductCode = "P002", Description = "Second Product"},
-                new Product {ID = 3, Name = "Product03", ProductCode = "P003", Description = "Third Product"}
+            context.Products.AddOrUpdate(p => p.Id,
+                new Product {Id = 1, Name = "Product01", ProductCode = "P001", Description = "First Product"},
+                new Product {Id = 2, Name = "Product02", ProductCode = "P002", Description = "Second Product"},
+                new Product {Id = 3, Name = "Product03", ProductCode = "P003", Description = "Third Product"}
                 );
 
             context.SaveChanges();

@@ -47,13 +47,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BurgerShopContext.cs" />
+    <Compile Include="EntityService.cs" />
+    <Compile Include="GenericRepository.cs" />
+    <Compile Include="IEntityService.cs" />
+    <Compile Include="IGenericRepository.cs" />
+    <Compile Include="IProductRepository.cs" />
+    <Compile Include="IProductService.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Migrations\201504050217030_InitialCreate.cs" />
     <Compile Include="Migrations\201504050217030_InitialCreate.Designer.cs">
       <DependentUpon>201504050217030_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="ProductRepository.cs" />
+    <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
