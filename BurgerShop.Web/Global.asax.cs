@@ -4,16 +4,13 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System.Data.Entity;
+using System.Web;
 using System.Web.Http;
-using BurgerShop.Data;
+using System.Web.Optimization;
+using System.Web.Routing;
 
 namespace App.BurgerShop.Web
 {
-    using System.Web;
-    using System.Web.Optimization;
-    using System.Web.Routing;
-
     public class Application : HttpApplication
     {
         protected void Application_Start()
@@ -21,11 +18,6 @@ namespace App.BurgerShop.Web
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //Set up the Database
-            BurgerShopContext burgerShopContext = new BurgerShopContext();
-            Database.SetInitializer(new BurgerShopInitializer());
-            burgerShopContext.Database.Initialize(true);
-
         }
     }
 }
