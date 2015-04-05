@@ -47,9 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BurgerShopContext.cs" />
-    <Compile Include="Migrations\201504050101597_Initial_Seed.cs" />
-    <Compile Include="Migrations\201504050101597_Initial_Seed.Designer.cs">
-      <DependentUpon>201504050101597_Initial_Seed.cs</DependentUpon>
+    <Compile Include="Migrations\201504050217030_InitialCreate.cs" />
+    <Compile Include="Migrations\201504050217030_InitialCreate.Designer.cs">
+      <DependentUpon>201504050217030_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
@@ -60,8 +60,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201504050101597_Initial_Seed.resx">
-      <DependentUpon>201504050101597_Initial_Seed.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504050217030_InitialCreate.resx">
+      <DependentUpon>201504050217030_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

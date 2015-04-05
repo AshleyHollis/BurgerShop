@@ -11,7 +11,7 @@ namespace BurgerShop.Data
 {
     public class BurgerShopContext : DbContext
     {
-        public BurgerShopContext() : base("BurgerShopContext")
+        public BurgerShopContext() : base("BurgerShop")
         {}
 
         //public DbSet<aspnet_Applications> aspnet_Applications { get; set; }

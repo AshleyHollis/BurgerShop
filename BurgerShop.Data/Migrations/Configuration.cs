@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using BurgerShop.Data.Models;
 
 namespace BurgerShop.Data.Migrations
@@ -13,16 +12,18 @@ namespace BurgerShop.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            ContextKey = "BurgerShop.Data.BurgerShopContext";
         }
 
         protected override void Seed(BurgerShopContext context)
         {
-            context.Products.AddOrUpdate(
+            context.Products.AddOrUpdate(p => p.ID,
                 new Product {ID = 1, Name = "Product01", ProductCode = "P001", Description = "First Product"},
                 new Product {ID = 2, Name = "Product02", ProductCode = "P002", Description = "Second Product"},
                 new Product {ID = 3, Name = "Product03", ProductCode = "P003", Description = "Third Product"}
                 );
+
+            context.SaveChanges();
         }
     }
 }
