@@ -14,7 +14,7 @@ describe('Controllers: HomeCtrl', function () {
     }));
 
     it('should set a page title', function () {
-        expect($scope.$root.title).toBe('AngularJS SPA Template for Visual Studio');
+        expect($scope.$root.title).toBe('BurgerShop');
     });
 });
 
@@ -29,7 +29,7 @@ describe('Controllers: AboutCtrl', function () {
     }));
 
     it('should set a page title', function () {
-        expect($scope.$root.title).toBe('AngularJS SPA | About');
+        expect($scope.$root.title).toBe('BurgerShop | About');
     });
 });
 
@@ -44,7 +44,7 @@ describe('Controllers: LoginCtrl', function () {
     }));
 
     it('should set a page title', function () {
-        expect($scope.$root.title).toBe('AngularJS SPA | Sign In');
+        expect($scope.$root.title).toBe('BurgerShop | Sign In');
     });
 });
 
