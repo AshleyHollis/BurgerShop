@@ -34,7 +34,7 @@ namespace BurgerShop.Messaging
         public ClientBase()
         {
             LoadClientTypes(_clientTypes);
-            _heartbeat = new Timer(10000);
+            _heartbeat = new Timer(TimeSpan.FromMinutes(1).TotalMilliseconds);
             _heartbeat.Elapsed += OnHeartbeatElapsed;
         }
 
@@ -72,7 +72,7 @@ namespace BurgerShop.Messaging
 
         private void EnsureClient(int index)
         {
-            if (_clients[index] == null)
+            if (_clients[index] == null && _clientTypes[index] != null)
             {
                 if (!_ensuring[index])
                 {
@@ -179,6 +179,8 @@ namespace BurgerShop.Messaging
             try
             {
                 EnsureClient(index);
+                if (_clients[index] == null) return result;
+                
                 result = action(_clients[index]);
             }
             catch(Exception ex)

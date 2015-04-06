@@ -11,6 +11,7 @@ namespace BurgerShop.Messages
         public const string RecordSongPlay = "record-song-play";
         public const string ComputeTop10 = "compute-top10";
         public const string GetTop10 = "get-top10";
+        public const string WebServiceProcessQueue = "webserviceprocessqueue";
     }
 }
 

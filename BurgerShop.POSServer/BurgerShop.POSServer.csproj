@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9B887A9-901B-49BB-89F8-A5C8F32C5ECE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BurgerShop.POSServer</RootNamespace>
+    <AssemblyName>BurgerShop.POSServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueuePublisher.cs" />
+    <Compile Include="QueueSubscriber.cs" />
+    <Compile Include="TopicSubscriber.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BurgerShop.Aws\BurgerShop.Aws.csproj">
+      <Project>{23f9eef0-f212-4576-a8b8-12b3c8ec8980}</Project>
+      <Name>Sixeyed.Top10.Aws</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BurgerShop.Azure\BurgerShop.Azure.csproj">
+      <Project>{cca70d52-3bdb-44a4-b50f-02cf37fb2fed}</Project>
+      <Name>Sixeyed.Top10.Azure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BurgerShop.Core\BurgerShop.Core.csproj">
+      <Project>{46922e55-ac8c-4789-94d7-343bda939db2}</Project>
+      <Name>BurgerShop.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BurgerShop.MessageHandlers\BurgerShop.MessageHandlers.csproj">
+      <Project>{af6e33af-5ba0-4535-855c-8a1cda492c77}</Project>
+      <Name>Sixeyed.Top10.MessageHandlers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BurgerShop.Messages\BurgerShop.Messages.csproj">
+      <Project>{7f0962d9-8d5b-4590-8663-10e0705fbf04}</Project>
+      <Name>Sixeyed.Top10.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BurgerShop.Messaging\BurgerShop.Messaging.csproj">
+      <Project>{b4b3bb4b-5a2d-432e-962a-c0778ed24844}</Project>
+      <Name>Sixeyed.Top10.Messaging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

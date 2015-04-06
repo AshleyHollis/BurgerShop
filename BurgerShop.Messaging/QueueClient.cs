@@ -34,8 +34,14 @@ namespace BurgerShop.Messaging
         protected override void LoadClientTypes(List<Type> clientTypes)
         {
             clientTypes.Clear();
-            clientTypes.Add(Type.GetType(Config.GetSetting("PrimaryQueueClientType")));
-            clientTypes.Add(Type.GetType(Config.GetSetting("SecondaryQueueClientType")));
+
+            var primaryType = Type.GetType(Config.GetSetting("PrimaryQueueClientType"));
+            if (primaryType == null) Log.Error("Could not resolve type for PrimaryQueueClientType");
+            clientTypes.Add(primaryType);
+
+            var secondaryType = Type.GetType(Config.GetSetting("SecondaryQueueClientType"));
+            if (secondaryType == null) Log.Error("Could not resolve type for SecondaryQueueClientType");
+            clientTypes.Add(secondaryType);
         }
 
         protected override IQueueClient CreateInstance(Type type)
