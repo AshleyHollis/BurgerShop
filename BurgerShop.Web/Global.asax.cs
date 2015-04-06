@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Optimization;
 using System.Web.Routing;
+using App.BurgerShop.Web.App_Start;
 
 namespace App.BurgerShop.Web
 {
@@ -18,6 +19,7 @@ namespace App.BurgerShop.Web
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            AutoMapperConfig.RegisterMappings();
         }
     }
 }

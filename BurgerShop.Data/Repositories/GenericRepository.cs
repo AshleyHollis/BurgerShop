@@ -107,7 +107,6 @@ namespace BurgerShop.Data
             where TEntity : class
             where TDto : class
         {
-            Mapper.CreateMap<TEntity, TDto>();
             return Mapper.Map<TEntity, TDto>(entity);
         }
 
@@ -115,7 +114,6 @@ namespace BurgerShop.Data
             where TEntity : class
             where TDto : class
         {
-            Mapper.CreateMap<TEntity, TDto>();
             return Mapper.Map<IEnumerable<TEntity>, IEnumerable<TDto>>(entity);
         }
 
@@ -123,7 +121,6 @@ namespace BurgerShop.Data
             where TDto : class
             where TEntity : class
         {
-            Mapper.CreateMap<TDto, TEntity>();
             return Mapper.Map<TDto, TEntity>(dto);
         }
 
@@ -131,7 +128,6 @@ namespace BurgerShop.Data
             where TDto : class
             where TEntity : class
         {
-            Mapper.CreateMap<TDto, TEntity>();
             return Mapper.Map<IEnumerable<TDto>, IEnumerable<TEntity>>(dto);
         }
     }

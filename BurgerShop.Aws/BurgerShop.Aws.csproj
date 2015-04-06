@@ -7,8 +7,8 @@
     <ProjectGuid>{23F9EEF0-F212-4576-A8B8-12B3C8EC8980}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sixeyed.Top10.Aws</RootNamespace>
-    <AssemblyName>Sixeyed.Top10.Aws</AssemblyName>
+    <RootNamespace>BurgerShop.Aws</RootNamespace>
+    <AssemblyName>BurgerShop.Aws</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -64,11 +64,11 @@
     </ProjectReference>
     <ProjectReference Include="..\BurgerShop.Messages\BurgerShop.Messages.csproj">
       <Project>{7f0962d9-8d5b-4590-8663-10e0705fbf04}</Project>
-      <Name>Sixeyed.Top10.Messages</Name>
+      <Name>BurgerShop.Messages</Name>
     </ProjectReference>
     <ProjectReference Include="..\BurgerShop.Messaging\BurgerShop.Messaging.csproj">
       <Project>{b4b3bb4b-5a2d-432e-962a-c0778ed24844}</Project>
-      <Name>Sixeyed.Top10.Messaging</Name>
+      <Name>BurgerShop.Messaging</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

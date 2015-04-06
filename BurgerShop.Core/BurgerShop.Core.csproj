@@ -63,6 +63,7 @@
     <Compile Include="Logging\Level.cs" />
     <Compile Include="Models\Dto.cs" />
     <Compile Include="Models\IDto.cs" />
+    <Compile Include="Models\OrderDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

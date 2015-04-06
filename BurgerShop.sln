@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.22609.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.Tests", "BurgerShop.Tests\BurgerShop.Tests.csproj", "{8B7281D4-9942-4E3D-B9E5-28BADE9C80DF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.Data", "BurgerShop.Data\BurgerShop.Data.csproj", "{E8CBFFDE-A019-423F-B78C-2C745A3DC190}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.Core", "BurgerShop.Core\BurgerShop.Core.csproj", "{46922E55-AC8C-4789-94D7-343BDA939DB2}"
@@ -29,16 +27,16 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "BurgerShop.AzureWeb", "Burg
 EndProject
 Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "BurgerShop.AzureWorker", "BurgerShop.AzureWorker\BurgerShop.AzureWorker.ccproj", "{EF7AFAC9-D798-4AA0-8D57-2150B6551F68}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3C27780B-D034-4ADF-8D9B-886180F8C5AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BurgerShop.IntegrationTests", "BurgerShop.IntegrationTests\BurgerShop.IntegrationTests.csproj", "{68566F07-6DF9-4FAE-9E01-E5BE06D0CC3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8B7281D4-9942-4E3D-B9E5-28BADE9C80DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8B7281D4-9942-4E3D-B9E5-28BADE9C80DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8B7281D4-9942-4E3D-B9E5-28BADE9C80DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8B7281D4-9942-4E3D-B9E5-28BADE9C80DF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E8CBFFDE-A019-423F-B78C-2C745A3DC190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E8CBFFDE-A019-423F-B78C-2C745A3DC190}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8CBFFDE-A019-423F-B78C-2C745A3DC190}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -87,8 +85,15 @@ Global
 		{EF7AFAC9-D798-4AA0-8D57-2150B6551F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF7AFAC9-D798-4AA0-8D57-2150B6551F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF7AFAC9-D798-4AA0-8D57-2150B6551F68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68566F07-6DF9-4FAE-9E01-E5BE06D0CC3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68566F07-6DF9-4FAE-9E01-E5BE06D0CC3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68566F07-6DF9-4FAE-9E01-E5BE06D0CC3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68566F07-6DF9-4FAE-9E01-E5BE06D0CC3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{68566F07-6DF9-4FAE-9E01-E5BE06D0CC3F} = {3C27780B-D034-4ADF-8D9B-886180F8C5AB}
 	EndGlobalSection
 EndGlobal

@@ -12,12 +12,12 @@ namespace BurgerShop.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "BurgerShop.Data.BurgerShopContext";
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(BurgerShopContext context)
         {
-            context.Products.AddOrUpdate(p => p.Id,
+            context.Products.AddOrUpdate(
                 new Product {Id = 1, Name = "Product01", ProductCode = "P001", Description = "First Product"},
                 new Product {Id = 2, Name = "Product02", ProductCode = "P002", Description = "Second Product"},
                 new Product {Id = 3, Name = "Product03", ProductCode = "P003", Description = "Third Product"}

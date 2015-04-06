@@ -21,10 +21,11 @@ namespace BurgerShop.Data
         //public DbSet<aspnet_Users> aspnet_Users { get; set; }
         //public DbSet<aspnet_Membership> aspnet_Membership { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-        }
+        }       
     }
 }

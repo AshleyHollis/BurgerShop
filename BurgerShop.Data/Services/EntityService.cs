@@ -64,14 +64,17 @@ namespace BurgerShop.Data
             _repository = repository;
         }
 
-        public virtual void Create(TDto dto)
+        // TODO: Implement another method that only returns the Id of the newly created record.
+        public virtual TDto Create(TDto dto)
         {
             if (dto == null)
             {
                 throw new ArgumentNullException("entity");
             }
-            _repository.Add(dto);
+            var createdDto = _repository.Add(dto);
             _unitOfWork.Commit();
+
+            return createdDto;
         }
 
 

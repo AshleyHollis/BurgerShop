@@ -49,15 +49,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapperConfig.cs" />
     <Compile Include="BurgerShopContext.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\IEntity.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\IGenericRepository.cs" />
+    <Compile Include="Repositories\IOrderRepository.cs" />
     <Compile Include="Repositories\IProductRepository.cs" />
+    <Compile Include="Repositories\OrderRepository.cs" />
+    <Compile Include="Services\IOrderService.cs" />
     <Compile Include="Services\IProductService.cs" />
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Services\OrderService.cs" />
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="Migrations\201504050217030_InitialCreate.cs" />
     <Compile Include="Migrations\201504050217030_InitialCreate.Designer.cs">
@@ -85,6 +91,14 @@
     <ProjectReference Include="..\BurgerShop.Core\BurgerShop.Core.csproj">
       <Project>{46922e55-ac8c-4789-94d7-343bda939db2}</Project>
       <Name>BurgerShop.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BurgerShop.Messages\BurgerShop.Messages.csproj">
+      <Project>{7F0962D9-8D5B-4590-8663-10E0705FBF04}</Project>
+      <Name>BurgerShop.Messages</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BurgerShop.Messaging\BurgerShop.Messaging.csproj">
+      <Project>{B4B3BB4B-5A2D-432E-962A-C0778ED24844}</Project>
+      <Name>BurgerShop.Messaging</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

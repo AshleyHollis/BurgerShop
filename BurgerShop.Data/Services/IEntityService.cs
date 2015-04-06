@@ -17,7 +17,7 @@ namespace BurgerShop.Data
         where TEntity : BaseEntity
         where TDto : BaseDto
     {
-        void Create(TDto dto);
+        TDto Create(TDto dto);
         void Delete(TDto dto);
         IEnumerable<TDto> GetAll();
         void Update(TDto dto);

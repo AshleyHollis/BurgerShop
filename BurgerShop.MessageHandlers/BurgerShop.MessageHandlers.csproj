@@ -72,11 +72,11 @@
   <ItemGroup>
     <ProjectReference Include="..\BurgerShop.Aws\BurgerShop.Aws.csproj">
       <Project>{23f9eef0-f212-4576-a8b8-12b3c8ec8980}</Project>
-      <Name>Sixeyed.Top10.Aws</Name>
+      <Name>BurgerShop.Aws</Name>
     </ProjectReference>
     <ProjectReference Include="..\BurgerShop.Azure\BurgerShop.Azure.csproj">
       <Project>{cca70d52-3bdb-44a4-b50f-02cf37fb2fed}</Project>
-      <Name>Sixeyed.Top10.Azure</Name>
+      <Name>BurgerShop.Azure</Name>
     </ProjectReference>
     <ProjectReference Include="..\BurgerShop.Core\BurgerShop.Core.csproj">
       <Project>{46922e55-ac8c-4789-94d7-343bda939db2}</Project>
@@ -84,11 +84,11 @@
     </ProjectReference>
     <ProjectReference Include="..\BurgerShop.Messages\BurgerShop.Messages.csproj">
       <Project>{7f0962d9-8d5b-4590-8663-10e0705fbf04}</Project>
-      <Name>Sixeyed.Top10.Messages</Name>
+      <Name>BurgerShop.Messages</Name>
     </ProjectReference>
     <ProjectReference Include="..\BurgerShop.Messaging\BurgerShop.Messaging.csproj">
       <Project>{b4b3bb4b-5a2d-432e-962a-c0778ed24844}</Project>
-      <Name>Sixeyed.Top10.Messaging</Name>
+      <Name>BurgerShop.Messaging</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

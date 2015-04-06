@@ -39,13 +39,21 @@ namespace BurgerShop.Messaging
         protected override void LoadClientTypes(List<Type> clientTypes)
         {
             clientTypes.Clear();
+
+            var primaryType = Type.GetType(Config.GetSetting("PrimaryTopicClientType"));
+            if (primaryType == null) Log.Error("Could not resolve type for PrimaryTopicClientType");
+
             clientTypes.Add(Type.GetType(Config.GetSetting("PrimaryTopicClientType")));
+            
+            var secondaryType = Type.GetType(Config.GetSetting("SecondaryTopicClientType"));
+            if (secondaryType == null) Log.Error("Could not resolve type for SecondaryTopicClientType");
+
             clientTypes.Add(Type.GetType(Config.GetSetting("SecondaryTopicClientType")));
         }
 
         protected override ITopicClient CreateInstance(Type type)
         {
-            return (ITopicClient)Activator.CreateInstance(type, new object[] { TopicName, SubscriptionName });
+            return (ITopicClient)Activator.CreateInstance(type, TopicName, SubscriptionName);
         }
     }
 }
