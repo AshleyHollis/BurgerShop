@@ -3,8 +3,8 @@ using Microsoft.ServiceBus;
 using Microsoft.ServiceBus.Messaging;
 using BurgerShop.Core;
 using BurgerShop.Messaging;
-using azure = Microsoft.ServiceBus.Messaging;
 using BurgerShop.Messaging.Spec;
+using azure = Microsoft.ServiceBus.Messaging;
 
 namespace BurgerShop.Azure
 {
@@ -47,7 +47,7 @@ namespace BurgerShop.Azure
             _queueClient.Send(brokeredMessage);
         }
 
-        public void Subscribe(Action<Messaging.Message> onMessageReceived)
+        public void Subscribe(Action<Message> onMessageReceived)
         {
             try
             {

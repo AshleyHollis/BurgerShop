@@ -4,12 +4,13 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-[assembly: Microsoft.Owin.OwinStartup(typeof(App.BurgerShop.Web.Startup))]
+using BurgerShop.Web;
+using Owin;
 
-namespace App.BurgerShop.Web
+[assembly: Microsoft.Owin.OwinStartup(typeof(Startup))]
+
+namespace BurgerShop.Web
 {
-    using Owin;
-
     public partial class Startup
     {
         public void Configuration(IAppBuilder app)

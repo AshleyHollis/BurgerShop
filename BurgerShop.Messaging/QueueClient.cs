@@ -1,13 +1,13 @@
-﻿using BurgerShop.Core;
-using BurgerShop.Messaging.Spec;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using BurgerShop.Core;
+using BurgerShop.Messaging.Spec;
 
 namespace BurgerShop.Messaging
 {
     public class QueueClient : ClientBase<IQueueClient>, IQueueClient
     {
-        public string QueueName { get; private set; }
+        public string QueueName { get; }
 
         public QueueClient(string queueName) : base()
         {
@@ -46,7 +46,7 @@ namespace BurgerShop.Messaging
 
         protected override IQueueClient CreateInstance(Type type)
         {
-            return (IQueueClient)Activator.CreateInstance(type, new object[] { QueueName });
+            return (IQueueClient)Activator.CreateInstance(type, QueueName);
         }
     }
 }

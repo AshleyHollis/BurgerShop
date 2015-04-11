@@ -1,6 +1,6 @@
-﻿using Microsoft.ServiceBus.Messaging;
+﻿using BurgerShop.Messaging;
+using Microsoft.ServiceBus.Messaging;
 using Newtonsoft.Json;
-using BurgerShop.Messaging;
 
 namespace BurgerShop.Azure
 {

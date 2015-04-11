@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
-using BurgerShop.Messaging;
-using BurgerShop.Messaging.Spec;
 using System;
+using BurgerShop.Messaging;
 
 namespace BurgerShop.Aws
 {

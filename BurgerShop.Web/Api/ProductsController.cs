@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Description;
 using BurgerShop.Core.Models;
-using BurgerShop.Data;
+using BurgerShop.Data.Services;
 
-namespace App.BurgerShop.Web.Api
+namespace BurgerShop.Web.Api
 {
     public class ProductsController : ApiController
     {

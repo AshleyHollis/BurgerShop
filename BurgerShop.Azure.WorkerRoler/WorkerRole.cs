@@ -1,8 +1,7 @@
-using Microsoft.WindowsAzure.ServiceRuntime;
 using BurgerShop.MessageHandlers;
-using System.Threading;
+using Microsoft.WindowsAzure.ServiceRuntime;
 
-namespace BurgerShop.Azure.WorkerRole
+namespace Sixeyed.Top10.Azure.WorkerRole
 {
     public class WorkerRole : RoleEntryPoint
     {

@@ -2,13 +2,12 @@
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
 using Newtonsoft.Json;
-using BurgerShop.Messaging.Spec;
 using System;
 using System.Linq;
-using msg = BurgerShop.Messaging;
-using BurgerShop.Messaging;
 using Amazon.SQS.Util;
 using BurgerShop.Core;
+using BurgerShop.Messaging;
+using BurgerShop.Messaging.Spec;
 
 namespace BurgerShop.Aws
 {
@@ -45,8 +44,7 @@ namespace BurgerShop.Aws
         {
             if (!TopicExists())
             {
-                var request = new CreateTopicRequest();
-                request.Name = TopicName;
+                var request = new CreateTopicRequest {Name = TopicName};
                 var response = _snsClient.CreateTopic(request);
                 TopicArn = response.TopicArn;
             }
@@ -105,7 +103,7 @@ namespace BurgerShop.Aws
             return exists;
         }
 
-        public void Subscribe(Action<msg.Message> receiveAction)
+        public void Subscribe(Action<Message> receiveAction)
         {
             _queueClient.Subscribe(receiveAction);
         }

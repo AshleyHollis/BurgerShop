@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
-using BurgerShop.MessageHandlers.Commands;
+using BurgerShop.Messages.Commands;
 using BurgerShop.Messages.Events;
 using BurgerShop.Messaging;
 using BurgerShop.Messaging.Extensions;
 using BurgerShop.Messaging.Spec;
+using BurgerShop.POS.MessageHandlers.Commands;
 
-namespace BurgerShop.MessageHandlers
+namespace BurgerShop.POS.MessageHandlers
 {
     public static class MessageHandlerFactory
     {
@@ -15,7 +16,7 @@ namespace BurgerShop.MessageHandlers
         {
             _handlers = new Dictionary<string, IMessageHandler>
             {
-                {typeof (CreateOrder).GetMessageType(), new CreateOrderHandler()}
+                {typeof (PlaceOrderToStore).GetMessageType(), new PlaceOrderToStoreHandler()}
             };
         }
 

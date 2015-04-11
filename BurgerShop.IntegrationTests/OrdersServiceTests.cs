@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using App.BurgerShop.Web.App_Start;
 using BurgerShop.Core.Models;
 using BurgerShop.Data;
+using BurgerShop.Data.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BurgerShop.IntegrationTests

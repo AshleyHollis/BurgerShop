@@ -1,38 +1,32 @@
-﻿using BurgerShop.Messages;
-using BurgerShop.Messages.Events;
-using System;
-using System.Linq;
+﻿using System;
+using BurgerShop.POS.MessageHandlers;
 
-namespace BurgerShop.POSServer
+namespace BurgerShop.POS.Server
 {
-    class Program
+    internal class Program
     {
-        private static readonly Random Random = new Random();
+        private static readonly Host Host = new Host();
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
             Console.ForegroundColor = ConsoleColor.Green;
-            TopicSubscriber.Run(args);
+            Console.WriteLine("Please enter the store number for this store:");
 
-            //string mode;
-            //if (args.Length == 0)
-            //{
-            //    Console.WriteLine("Subscribe to? (_t_opic or _q_ueue)");
-            //    mode = Console.ReadLine();
-            //}
-            //else
-            //{
-            //    mode = args[0];
-            //}
-            //switch (mode)
-            //{
-            //    case "t":
-            //        TopicSubscriber.Run(args);
-            //        break;
-            //    case "q":
-            //        QueueSubscriber.Run(args);
-            //        break;
-            //}
+            var storeNo = 0;
+            while (storeNo == default(int))
+            {
+                var storeNoString = Console.ReadLine();
+                int.TryParse(storeNoString, out storeNo);
+            }
+
+            Host.Start(storeNo);
+        }
+
+        static void CurrentDomain_ProcessExit(object sender, EventArgs e)
+        {
+            Console.WriteLine("exit");
+            Host.Stop();
         }
     }
 }

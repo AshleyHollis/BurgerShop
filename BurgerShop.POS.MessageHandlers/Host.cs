@@ -1,14 +1,13 @@
-﻿using BurgerShop.Core;
-using BurgerShop.Messages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using BurgerShop.Data;
+using BurgerShop.Core;
+using BurgerShop.Messages;
 using BurgerShop.Messaging;
 using BurgerShop.Messaging.Spec;
 
-namespace BurgerShop.MessageHandlers
+namespace BurgerShop.POS.MessageHandlers
 {
     public class Host
     {
@@ -42,16 +41,14 @@ namespace BurgerShop.MessageHandlers
             }
         }
 
-        public void Start(bool keepAlive = true)
+        public void Start(int storeNo, bool keepAlive = true)
         {
             try
             {
-                AutoMapperConfig.RegisterMappings();
-
                 _clients = new Dictionary<string, IQueueClient>();
                 _clientTasks = new List<Task>
-                {
-                    Task.Factory.StartNew(() => EnsureAndSubscribeQueue(Queue.CreateOrder))
+                {                    
+                    Task.Factory.StartNew(() => EnsureAndSubscribeQueue(storeNo.ToString()))
                 };
                 Log.Info("--Awaiting messages");
                 if (keepAlive)
@@ -76,5 +73,7 @@ namespace BurgerShop.MessageHandlers
                 _completedEvent.Set();
             }
         }
+
+        
     }
 }

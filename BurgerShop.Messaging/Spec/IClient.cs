@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BurgerShop.Messaging
+namespace BurgerShop.Messaging.Spec
 {
     public interface IClient 
     {

@@ -4,12 +4,11 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace App.BurgerShop.Web
+using System.Web.Routing;
+using BurgerShop.Web.Routing;
+
+namespace BurgerShop.Web
 {
-    using System.Web.Routing;
-
-    using App.BurgerShop.Web.Routing;
-
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)

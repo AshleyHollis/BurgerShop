@@ -7,9 +7,9 @@ using Amazon.SQS;
 using Amazon.SQS.Model;
 using Amazon.SQS.Util;
 using BurgerShop.Core;
-using BurgerShop.Messaging.Spec;
-using msg = BurgerShop.Messaging;
 using System.Threading;
+using BurgerShop.Messaging.Spec;
+using Message = BurgerShop.Messaging.Message;
 
 namespace BurgerShop.Aws
 {
@@ -19,7 +19,7 @@ namespace BurgerShop.Aws
         public string QueueName { get; private set; }
         internal string QueueUrl { get; private set; }
         internal string QueueArn { get; private set; }
-        private Action<msg.Message> _receiveAction;
+        private Action<Message> _receiveAction;
         private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
         private bool _isListening;
 
@@ -125,14 +125,14 @@ namespace BurgerShop.Aws
         }
 
         
-        public void Subscribe(Action<msg.Message> receiveAction)
+        public void Subscribe(Action<Message> receiveAction)
         {
             _receiveAction = receiveAction;
             _isListening = true;
             Subscribe();
         }
 
-        public void Send(msg.Message message)
+        public void Send(Message message)
         {
             var request = new SendMessageRequest();
             request.QueueUrl = QueueUrl;

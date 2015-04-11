@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 
-namespace BurgerShop.Data
+namespace BurgerShop.Data.UnitOfWork
 {
     /// <summary>
     /// The Entity Framework implementation of IUnitOfWork

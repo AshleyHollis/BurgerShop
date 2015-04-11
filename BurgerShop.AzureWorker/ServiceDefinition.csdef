@@ -12,5 +12,9 @@
       <Setting name="AWSAccessKey" />
       <Setting name="AWSSecretKey" />
     </ConfigurationSettings>
+    <Imports>
+      <Import moduleName="RemoteAccess" />
+      <Import moduleName="RemoteForwarder" />
+    </Imports>
   </WorkerRole>
 </ServiceDefinition>

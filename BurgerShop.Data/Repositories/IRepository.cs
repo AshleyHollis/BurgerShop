@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using BurgerShop.Data.Models;
 
-namespace BurgerShop.Data
+namespace BurgerShop.Data.Repositories
 {
     public interface IRepository<T> where T : IEntity<T>
     {

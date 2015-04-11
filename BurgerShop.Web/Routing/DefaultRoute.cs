@@ -4,10 +4,10 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace App.BurgerShop.Web.Routing
-{
-    using System.Web.Routing;
+using System.Web.Routing;
 
+namespace BurgerShop.Web.Routing
+{
     public class DefaultRoute : Route
     {
         public DefaultRoute()

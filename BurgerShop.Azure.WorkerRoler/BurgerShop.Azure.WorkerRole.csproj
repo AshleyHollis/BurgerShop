@@ -8,8 +8,8 @@
     <ProjectGuid>{420604EB-37B5-4965-BA94-953C6784D716}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sixeyed.Top10.Azure.WorkerRole</RootNamespace>
-    <AssemblyName>Sixeyed.Top10.Azure.WorkerRole</AssemblyName>
+    <RootNamespace>BurgerShop.Azure.WorkerRole</RootNamespace>
+    <AssemblyName>BurgerShop.Azure.WorkerRole</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

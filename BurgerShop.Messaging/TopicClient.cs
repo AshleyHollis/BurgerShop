@@ -1,7 +1,7 @@
-﻿using BurgerShop.Core;
-using BurgerShop.Messaging.Spec;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using BurgerShop.Core;
+using BurgerShop.Messaging.Spec;
 
 namespace BurgerShop.Messaging
 {

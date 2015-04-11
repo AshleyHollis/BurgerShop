@@ -1,4 +1,4 @@
-﻿namespace BurgerShop.Data
+﻿namespace BurgerShop.Data.Services
 {
     public interface IService
     {}

@@ -3,15 +3,23 @@
   <Role name="BurgerShop.Azure.WorkerRole">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.ServiceBus.ConnectionString" value="{YOUR-CONNECTION-STRING}" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://burgershop.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=HByHhQW6J0vgqbVVi3G/pJSEIl9vpnn7cY/cIyv1rq8=" />
       <Setting name="mongoDb" value="mongodb://{YOUR-REPLICA-SET-NODES}/?connect=replicaset" />
       <Setting name="logToMongo" value="false" />
       <Setting name="PrimaryQueueClientType" value="BurgerShop.Azure.QueueClient,BurgerShop.Azure" />
       <Setting name="SecondaryQueueClientType" value="BurgerShop.Aws.QueueClient,BurgerShop.Aws" />
       <Setting name="PrimaryTopicClientType" value="BurgerShop.Azure.TopicClient,BurgerShop.Azure" />
       <Setting name="SecondaryTopicClientType" value="BurgerShop.Aws.TopicClient,BurgerShop.Aws" />
-      <Setting name="AWSAccessKey" value="{YOUR-ACCESS-KEY}" />
-      <Setting name="AWSSecretKey" value="{YOUR-SECRET-KEY}" />
+      <Setting name="AWSAccessKey" value="" />
+      <Setting name="AWSSecretKey" value="" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="admin" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCED4V1HyTLgaURHX0cGuiWfYwDQYJKoZIhvcNAQEBBQAEggEALPK8N3eE8deBHTfGxb8Ce0KE8u7Er2yw3GCYYbXfM6+/UHU6Z0KfTk/6QKITg0TKio9mPnVZPuMTMllPPSHGvYdeJyx2OEZBEPst50O7p+jucvU36mcB/0xCOQ/UG8xtH1oQX5gYWOEaFCLswjjKAI0+tBB5Nu6JfDT+AmMemAWbci06+pwcfQCnKMsHp7Ocymx2JAe0VxiBjbQilULBx2qjLnwlsu0xMT+UucCodIlZQcfqPmZ8ds9RbqG/M5MXV3iooyL3YHvKIntjHoJxfmZV3gttRZ/tYPQXFdsMsFUi6IZOBwueOgWO1nEzBj5CdgyKMvWcJvrl8N8fg1pSyDAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECPHkzhqi5WhjgBAGlrNwq8XZO7ALpCS4CO5o" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2016-04-11T23:59:59.0000000+10:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
     </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="BDBABABCFAB837F52F2EABB331DE621BD7A2E937" thumbprintAlgorithm="sha1" />
+    </Certificates>
   </Role>
 </ServiceConfiguration>

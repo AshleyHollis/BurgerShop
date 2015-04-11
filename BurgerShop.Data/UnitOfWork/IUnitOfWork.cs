@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BurgerShop.Data
+namespace BurgerShop.Data.UnitOfWork
 {
     public interface IUnitOfWork : IDisposable
     {

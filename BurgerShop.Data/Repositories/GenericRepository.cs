@@ -6,7 +6,7 @@ using AutoMapper;
 using BurgerShop.Core.Models;
 using BurgerShop.Data.Models;
 
-namespace BurgerShop.Data
+namespace BurgerShop.Data.Repositories
 {
     public abstract class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {

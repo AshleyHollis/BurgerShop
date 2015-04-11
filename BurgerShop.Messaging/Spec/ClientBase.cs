@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Timers;
 using BurgerShop.Core;
 
-namespace BurgerShop.Messaging
+namespace BurgerShop.Messaging.Spec
 {
     public abstract class ClientBase<TClient>
         where TClient : class, IClient
@@ -55,17 +54,19 @@ namespace BurgerShop.Messaging
                 _heartbeatRunning = true;
                 //heartbeat fires in receiver mode once subscribers have started; 
                 //if we have lost access to a queue,try to resubscribe:
-                if (!ExecutePrimary(x => x.IsListening()))
-                {
-                    StartPrimary();
-                }
-                if (!ExecuteSecondary(x => x.IsListening()))
-                {
-                    StartSecondary();
-                }
+                if (!ExecutePrimary(x => x.IsListening())) StartPrimary();
+
                 //peek the queue to confirm connectivity, unsubscribe if lost:
                 ExecutePrimary(x => x.HasMessages(), x => x.Unsubscribe());
-                ExecuteSecondary(x => x.HasMessages(), x => x.Unsubscribe());
+
+                if (Convert.ToBoolean(Config.GetSetting("EnableSecondary")))
+                {
+                    if (!ExecuteSecondary(x => x.IsListening())) StartSecondary();
+
+                    //peek the queue to confirm connectivity, unsubscribe if lost:
+                    ExecuteSecondary(x => x.HasMessages(), x => x.Unsubscribe());
+                }
+
                 _heartbeatRunning = false;
             }
         }
@@ -95,7 +96,8 @@ namespace BurgerShop.Messaging
             if (_onMessageReceived != null)
             {
                 StartSubscriber(0);
-                StartSubscriber(1);
+                if (Convert.ToBoolean(Config.GetSetting("EnableSecondary"))) StartSubscriber(1);
+                
                 _heartbeat.Start();
             }
         }

@@ -4,13 +4,13 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace App.BurgerShop.Web
-{
-    using Microsoft.AspNet.Identity;
-    using Microsoft.Owin;
-    using Microsoft.Owin.Security.Cookies;
-    using Owin;
+using Microsoft.AspNet.Identity;
+using Microsoft.Owin;
+using Microsoft.Owin.Security.Cookies;
+using Owin;
 
+namespace BurgerShop.Web
+{
     public partial class Startup
     {
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864

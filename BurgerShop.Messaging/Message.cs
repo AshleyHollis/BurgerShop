@@ -1,6 +1,6 @@
 ﻿using System;
-using Newtonsoft.Json.Linq;
 using BurgerShop.Messaging.Extensions;
+using Newtonsoft.Json.Linq;
 
 namespace BurgerShop.Messaging
 {

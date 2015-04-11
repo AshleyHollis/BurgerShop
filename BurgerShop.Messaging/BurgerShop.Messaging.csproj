@@ -7,8 +7,8 @@
     <ProjectGuid>{B4B3BB4B-5A2D-432E-962A-C0778ED24844}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sixeyed.Top10.Messaging</RootNamespace>
-    <AssemblyName>Sixeyed.Top10.Messaging</AssemblyName>
+    <RootNamespace>BurgerShop.Messaging</RootNamespace>
+    <AssemblyName>BurgerShop.Messaging</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

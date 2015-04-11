@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BurgerShop.Messaging.Spec
+﻿namespace BurgerShop.Messaging.Spec
 {
     public interface ITopicClient : IClient
     {

@@ -8,9 +8,9 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Optimization;
 using System.Web.Routing;
-using App.BurgerShop.Web.App_Start;
+using BurgerShop.Data;
 
-namespace App.BurgerShop.Web
+namespace BurgerShop.Web
 {
     public class Application : HttpApplication
     {

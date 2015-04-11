@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoMapper;
+﻿using AutoMapper;
 using BurgerShop.Core.Models;
 using BurgerShop.Data.Models;
+using BurgerShop.Messages.Commands;
+using BurgerShop.Messages.Events;
 
-namespace App.BurgerShop.Web.App_Start
+namespace BurgerShop.Data
 {
     public static class AutoMapperConfig
     {
@@ -16,6 +14,10 @@ namespace App.BurgerShop.Web.App_Start
             Mapper.CreateMap<Product, ProductDTO>().ReverseMap();
             Mapper.CreateMap<Order, OrderDTO>();
             Mapper.CreateMap<Order, OrderDTO>().ReverseMap();
+            Mapper.CreateMap<OrderDTO, CreateOrder>();
+            Mapper.CreateMap<OrderDTO, CreateOrder>().ReverseMap();
+            Mapper.CreateMap<CreateOrder, PlaceOrderToStore>();
+            Mapper.CreateMap<CreateOrder, PlaceOrderToStore>().ReverseMap();
         }
     }
 }

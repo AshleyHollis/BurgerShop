@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using BurgerShop.Core.Models;
 using BurgerShop.Data.Models;
+using BurgerShop.Data.Repositories;
+using BurgerShop.Data.UnitOfWork;
 
-namespace BurgerShop.Data
+namespace BurgerShop.Data.Services
 {
     public abstract class EntityService<T> : IEntityService<T> where T : BaseEntity
     {

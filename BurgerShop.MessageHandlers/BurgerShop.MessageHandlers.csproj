@@ -7,8 +7,8 @@
     <ProjectGuid>{AF6E33AF-5BA0-4535-855C-8A1CDA492C77}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sixeyed.Top10.MessageHandlers</RootNamespace>
-    <AssemblyName>Sixeyed.Top10.MessageHandlers</AssemblyName>
+    <RootNamespace>BurgerShop.MessageHandlers</RootNamespace>
+    <AssemblyName>BurgerShop.MessageHandlers</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.4.0.0-ci1036\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="MongoDB.Bson, Version=1.8.3.9, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\mongocsharpdriver.1.8.3\lib\net35\MongoDB.Bson.dll</HintPath>
@@ -57,13 +60,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\ComputeTop10Handler.cs" />
-    <Compile Include="Commands\RecordSongPlayHandler.cs" />
-    <Compile Include="Database\Documents\SongPlay.cs" />
-    <Compile Include="Database\Queries\CurrentTop10.cs" />
+    <Compile Include="Commands\CreateOrderHandler.cs" />
     <Compile Include="MessageHandlerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queries\GetCurrentTop10Handler.cs" />
     <Compile Include="Host.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +81,10 @@
       <Project>{46922e55-ac8c-4789-94d7-343bda939db2}</Project>
       <Name>BurgerShop.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BurgerShop.Data\BurgerShop.Data.csproj">
+      <Project>{E8CBFFDE-A019-423F-B78C-2C745A3DC190}</Project>
+      <Name>BurgerShop.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BurgerShop.Messages\BurgerShop.Messages.csproj">
       <Project>{7f0962d9-8d5b-4590-8663-10e0705fbf04}</Project>
       <Name>BurgerShop.Messages</Name>
@@ -90,6 +93,11 @@
       <Project>{b4b3bb4b-5a2d-432e-962a-c0778ed24844}</Project>
       <Name>BurgerShop.Messaging</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\Documents\" />
+    <Folder Include="Database\Queries\" />
+    <Folder Include="Queries\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

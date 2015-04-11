@@ -51,6 +51,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <PublishProfile Include="Profiles\BurgerShopProduction.azurePubxml" />
     <PublishProfile Include="Profiles\sc-psod-reactive-workerProduction.azurePubxml" />
     <PublishProfile Include="Profiles\sc-psod-reactive-worker-usProduction.azurePubxml" />
   </ItemGroup>

@@ -1,7 +1,7 @@
 ﻿using BurgerShop.Core.Models;
 using BurgerShop.Data.Models;
 
-namespace BurgerShop.Data
+namespace BurgerShop.Data.Repositories
 {
     public interface IOrderRepository : IGenericRepository<Order, OrderDTO>
     {
