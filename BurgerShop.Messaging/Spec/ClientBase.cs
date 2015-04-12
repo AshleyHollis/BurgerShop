@@ -143,7 +143,7 @@ namespace BurgerShop.Messaging.Spec
 
         protected void ExecuteSecondary(Action<TClient> action, Action<TClient> onException = null)
         {
-            Execute(action, 1, onException);
+            if (Convert.ToBoolean(Config.GetSetting("EnableSecondary"))) Execute(action, 1, onException);
         }
 
         private void Execute(Action<TClient> action, int index, Action<TClient> onException = null)

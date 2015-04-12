@@ -18,6 +18,8 @@ namespace BurgerShop.Data
             Mapper.CreateMap<OrderDTO, CreateOrder>().ReverseMap();
             Mapper.CreateMap<CreateOrder, PlaceOrderToStore>();
             Mapper.CreateMap<CreateOrder, PlaceOrderToStore>().ReverseMap();
+            Mapper.CreateMap<PlaceOrderToStore, OrderBeingMade>();
+            Mapper.CreateMap<PlaceOrderToStore, OrderBeingMade>().ReverseMap();
         }
     }
 }

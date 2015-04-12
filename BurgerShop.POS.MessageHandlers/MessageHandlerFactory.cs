@@ -16,7 +16,12 @@ namespace BurgerShop.POS.MessageHandlers
         {
             _handlers = new Dictionary<string, IMessageHandler>
             {
-                {typeof (PlaceOrderToStore).GetMessageType(), new PlaceOrderToStoreHandler()}
+                {typeof (PlaceOrderToStore).GetMessageType(), new PlaceOrderToStoreHandler()},
+                {typeof (OrderBeingMade).GetMessageType(), new DummyHandler()},
+                {typeof (OrderBeingCooked).GetMessageType(), new DummyHandler()},
+                {typeof (OrderBeingDelivered).GetMessageType(), new DummyHandler()},
+                {typeof (OrderCompleted).GetMessageType(), new DummyHandler()},
+                {typeof (OrderReadyInStore).GetMessageType(), new DummyHandler()},
             };
         }
 

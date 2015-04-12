@@ -39,9 +39,12 @@ namespace BurgerShop.Messaging
             if (primaryType == null) Log.Error("Could not resolve type for PrimaryQueueClientType");
             clientTypes.Add(primaryType);
 
-            var secondaryType = Type.GetType(Config.GetSetting("SecondaryQueueClientType"));
-            if (secondaryType == null) Log.Error("Could not resolve type for SecondaryQueueClientType");
-            clientTypes.Add(secondaryType);
+            if (Convert.ToBoolean(Config.GetSetting("EnableSecondary")))
+            {
+                var secondaryType = Type.GetType(Config.GetSetting("SecondaryQueueClientType"));
+                if (secondaryType == null) Log.Error("Could not resolve type for SecondaryQueueClientType");
+                clientTypes.Add(secondaryType);
+            }
         }
 
         protected override IQueueClient CreateInstance(Type type)

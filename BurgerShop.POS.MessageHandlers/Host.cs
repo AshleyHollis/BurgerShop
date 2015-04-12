@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using BurgerShop.Core;
+using BurgerShop.Data;
 using BurgerShop.Messages;
 using BurgerShop.Messaging;
 using BurgerShop.Messaging.Spec;
@@ -45,6 +46,8 @@ namespace BurgerShop.POS.MessageHandlers
         {
             try
             {
+                AutoMapperConfig.RegisterMappings();
+
                 _clients = new Dictionary<string, IQueueClient>();
                 _clientTasks = new List<Task>
                 {                    

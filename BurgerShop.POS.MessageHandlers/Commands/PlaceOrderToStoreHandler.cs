@@ -25,17 +25,8 @@ namespace BurgerShop.POS.MessageHandlers.Commands
 
         public void Handle(Message message)
         {
-            _orderBeingMadeTimer = new Timer(TimeSpan.FromSeconds(10).TotalMilliseconds);
-            _orderBeingMadeTimer.Elapsed += _orderBeingMadeTimer_Elapsed;
-
-            _orderBeingCookedTimer = new Timer(TimeSpan.FromSeconds(10).TotalMilliseconds);
-            _orderBeingCookedTimer.Elapsed += OrderBeingCookedTimer_Elapsed;
-
-            _orderReadyInStoreTimer = new Timer(TimeSpan.FromSeconds(10).TotalMilliseconds);
-            _orderReadyInStoreTimer.Elapsed += _orderReadyInStoreTimer_Elapsed;
-
-            _orderBeingDeliveredTimer = new Timer(TimeSpan.FromSeconds(10).TotalMilliseconds);
-            _orderBeingDeliveredTimer.Elapsed += _orderBeingDeliveredTimer_Elapsed;
+            _orderBeingMadeTimer = new Timer {Interval = TimeSpan.FromSeconds(5).TotalMilliseconds, AutoReset = false, Enabled = true};
+            _orderBeingMadeTimer.Elapsed += _orderBeingMadeTimer_Elapsed;                                    
 
             var compute = message.Body as PlaceOrderToStore;
             if (compute != null)
@@ -51,17 +42,24 @@ namespace BurgerShop.POS.MessageHandlers.Commands
 
         private void _orderBeingMadeTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
+            _orderBeingCookedTimer = new Timer { Interval = TimeSpan.FromSeconds(5).TotalMilliseconds, AutoReset = false, Enabled = true };
+            _orderBeingCookedTimer.Elapsed += OrderBeingCookedTimer_Elapsed;
+
             var orderBeingCooked = new OrderBeingCooked { Id = _orderId, StoreNo = _storeNo };
             _queueClient.Send(new Message { Body = orderBeingCooked });
+            
         }
 
         private void OrderBeingCookedTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
+            _orderReadyInStoreTimer = new Timer { Interval = TimeSpan.FromSeconds(5).TotalMilliseconds, AutoReset = false, Enabled = true };
+            _orderReadyInStoreTimer.Elapsed += _orderReadyInStoreTimer_Elapsed;
+
             var orderReadyInStore = new OrderReadyInStore { Id = _orderId, StoreNo = _storeNo };
             _queueClient.Send(new Message { Body = orderReadyInStore });
         }
         private void _orderReadyInStoreTimer_Elapsed(object sender, ElapsedEventArgs e)
-        {
+        {            
             if (_orderDeliveryMethod == OrderDeliveryMethod.CarryOut)
             {
                 var orderComplete = new OrderCompleted { Id = _orderId, StoreNo = _storeNo };
@@ -69,6 +67,9 @@ namespace BurgerShop.POS.MessageHandlers.Commands
             }
             else
             {
+                _orderBeingDeliveredTimer = new Timer { Interval = TimeSpan.FromSeconds(5).TotalMilliseconds, AutoReset = false, Enabled = true };
+                _orderBeingDeliveredTimer.Elapsed += _orderBeingDeliveredTimer_Elapsed;
+
                 var orderBeingDelivered = new OrderBeingDelivered { Id = _orderId, StoreNo = _storeNo };
                 _queueClient.Send(new Message { Body = orderBeingDelivered });
             }

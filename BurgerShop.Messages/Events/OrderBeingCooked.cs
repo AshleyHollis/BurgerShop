@@ -1,4 +1,4 @@
-namespace BurgerShop.POS.MessageHandlers.Commands
+namespace BurgerShop.Messages.Events
 {
     public class OrderBeingCooked
     {

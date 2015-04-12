@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\DummyHandler.cs" />
     <Compile Include="Commands\PlaceOrderToStoreHandler.cs" />
     <Compile Include="Host.cs" />
     <Compile Include="MessageHandlerFactory.cs" />
@@ -51,6 +52,10 @@
     <ProjectReference Include="..\BurgerShop.Core\BurgerShop.Core.csproj">
       <Project>{46922E55-AC8C-4789-94D7-343BDA939DB2}</Project>
       <Name>BurgerShop.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BurgerShop.Data\BurgerShop.Data.csproj">
+      <Project>{E8CBFFDE-A019-423F-B78C-2C745A3DC190}</Project>
+      <Name>BurgerShop.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\BurgerShop.Messages\BurgerShop.Messages.csproj">
       <Project>{7F0962D9-8D5B-4590-8663-10E0705FBF04}</Project>
