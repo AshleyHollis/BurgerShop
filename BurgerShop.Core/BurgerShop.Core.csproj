@@ -65,6 +65,7 @@
     <Compile Include="Models\IDto.cs" />
     <Compile Include="Models\OrderDTO.cs" />
     <Compile Include="Models\ProductDTO.cs" />
+    <Compile Include="OrderDeliveryMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\OrderBeingDelivered.cs" />
+    <Compile Include="Events\OrderCompleted.cs" />
+    <Compile Include="Events\OrderReadyInStore.cs" />
+    <Compile Include="Events\OrderBeingCooked.cs" />
+    <Compile Include="Events\OrderBeingMade.cs" />
     <Compile Include="Commands\PlaceOrderToStore.cs" />
     <Compile Include="Events\CreateOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
